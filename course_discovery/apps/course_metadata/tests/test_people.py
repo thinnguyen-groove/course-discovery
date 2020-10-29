@@ -1,5 +1,6 @@
+from unittest import mock
+
 import ddt
-import mock
 import responses
 from testfixtures import LogCapture
 
@@ -19,7 +20,7 @@ class MarketingSitePublisherTests(MarketingSitePublisherTestMixin):
     Unit test cases for the MarketingSitePeople
     """
     def setUp(self):
-        super(MarketingSitePublisherTests, self).setUp()
+        super().setUp()
         self.partner = PartnerFactory()
         self.partner.marketing_site_url_root = self.api_root
         self.partner.marketing_site_api_username = self.username
@@ -179,4 +180,4 @@ class MarketingSitePublisherTests(MarketingSitePublisherTestMixin):
         with LogCapture(LOGGER_NAME) as log:
             people.delete_person_by_uuid(self.partner, self.uuid)
             log.check((LOGGER_NAME, 'INFO',
-                       'Person with UUID [{}] does not exist on the marketing site'.format(self.uuid)))
+                       f'Person with UUID [{self.uuid}] does not exist on the marketing site'))
