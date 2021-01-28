@@ -6,13 +6,13 @@ django==1.11.29
 django-autocomplete-light==3.1.8
 django-choices
 django-compressor==2.1.1
-django-contrib-comments==1.8.0
+django-contrib-comments
 django-cors-headers==2.4.0
 django-extensions==1.7.8
 django-filter==1.0.4
 django-fsm==2.6.0
 django-guardian==1.4.8
-django-haystack==2.5.0
+django-haystack
 django-libsass==0.7
 django-parler==1.8
 django-simple-history==1.9.0
